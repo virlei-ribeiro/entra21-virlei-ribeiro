@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// atividade Desafio 17
+//Elabore um script que leia um número e apresente o antecessor, o número e o sucessor.
+let numero = Number(prompt("numero"))
+console.log(numero)
+console.log(numero-1)
+console.log(numero+1)
+
+/*18) Faça um programa que calcule e mostre o volume de uma esfera sendo fornecido o valor de seu raio (R). 
+A fórmula para calcular o volume é: (4/3) * pi * R3. Considere (atribua) para pi o valor 3.14159.*/
+let raio = Number(prompt("raio"))
+let volume = (4/3) * 3.14159 * raio ** 3
+console.log(`numero(prompt ${volume}`)
+    
+//19) Escreva um script que receba a base e altura de triângulo e calcule a sua área.
+let altura = prompt("digite a atura")
+let base = prompt("digite a base")
+let area = base * altura / 2
+console.log(`A àrea é ${area})`)
+
+/*20) Construa um script que leia o preço de um produto, o percentual de desconto e calcule 
+o valor a pagar e o valor do desconto.*/
+let preco = Number(prompt("digite o preco"))
+let percentualDesconto = Number(prompt("digite o percentualDesconto"))
+let descontoProduto = (percentualDesconto /100) * preco
+let valorApagar = preco - descontoProduto
+console.log(`percentual de desconto ${percentualDesconto}`)
+console.log(`valor do desconto ${descontoProduto}`)
+console.log(`valor do produto final ${valorApagar}`)
+
+/*21) Faça um programa que leia o nome de um vendedor, o seu salário fixo e o total de vendas efetuadas por ele no mês (em dinheiro). 
+Sabendo que este vendedor ganha 15% de comissão sobre suas vendas efetuadas, informar o total a receber no final do mês, com duas casas decimais.*/
+let nomeVendedor = prompt("nome Vendedor")
+let salarioFixo = Number(prompt("salario fixo"))
+let totalVendas = Number(prompt("total de vendas mês"))
+let comissao = totalVendas * 0.15
+let salarioFinal = salarioFixo + comissao
+console.log(`seu salario é Fixo ${salarioFixo}`)
+console.log(`total de vendas do mês ${totalVendas}`)
+console.log(`valor da comissão mês ${comissao}`)
+console.log(`o valor do saláriofinal é ${salarioFinal}`)
+
+/* exercicio teste Prompt (Virlei)
+Faça um programa que leia o nome de um vendedor, o seu salário fixo e o total de vendas efetuadas por ele no mês (em dinheiro).*/
+let nomevendedor2 = prompt("nome vendedor 2")
+let salarioFixo2 = Number(prompt("salario fixo"))
+let totalVendas2 = Number(prompt("total de vendas mês"))
+let comissão2 = totalVendas2 * 0.20
+let salarioFinal2 = salarioFixo2 + comissão2
+console.log(`o salário fixo é ${salarioFinal2}`)
+console.log(`o total de vendas do mês é ${totalVendas2}`)
+console.log(`o valor da comissão mês é ${comissão2}`)
+console.log(`o valor do sálario final é ${salarioFinal2}`)
+
+</body>
+</html> 

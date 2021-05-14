@@ -1,0 +1,7 @@
+git nit inicialize  empty
+git status comando
+Dentrodo quadrado,na parte inferior da pag digitar git  _add dar enter
+depois dig git status dar enter
+
+
+git pull atualizar os arquivos 
