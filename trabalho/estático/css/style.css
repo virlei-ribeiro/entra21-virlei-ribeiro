@@ -1,75 +1,56 @@
-
 #header {
     text-align: center;
 }
 #header i {
-    
+
     color: blue;
 }
 #header2{
- margin-inline-start: 0px;
- margin-inline-end: 0px;
- margin: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
 }
 h1, h2,h3, h4, h5, h6, p {
     margin-top: 0;
     font-weight: 300;
     font-family: 'Lobster';
     color: rgb(143, 58, 92);
-    
-}
-.goiania{
-    position: absolute;
-    border: black;
 
-    }
-.itajai{
-    position:relative;
-    border: black;
 }
-.sp{
-    
-    border: black;
-}
-.buenos{
-    position:initial;
-    border: black;
-}
-.foz{
-   
-    border: black;
+.estados {
+    padding: 5px;
+    width: 45%;
+    line-height: 25px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+    border: #c4c4c4 solid;
+    border-radius: 10px;
 }
 section, h2,  dd {
-   
     color: darkred;
-    
 }
 
-    
-
-
-.nav {
-    
+.nav{
     color: #3b088d;
-    background-color:  #f7eaea;     
-    text-align: center; 
+    background-color:  #f7eaea;
+    text-align: center;
     width: auto;
     padding: 1em;
-   cursor: default;
+    cursor: default;
 }
 .nav ul{
     display:flex;
     justify-content: center;
-     margin: 0;
-     padding: 0;
-     list-style: none;
-     border-top: #3b088d;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: #3b088d;
 }
 
-   .nav ul li a.active{
+.nav ul li a.active{
     background-color:  #e5ebf3;
     box-shadow: none;
-} 
+}
 
 .leva ul li{
     display: inline-block;
@@ -79,10 +60,8 @@ section, h2,  dd {
     display: inline-block;
     list-style: none;
 }
-
-.button{
+.button {
     border: 2px solid white;
-    
     background-color:  #e796e3;
     width: auto;
     padding: 1em;
@@ -104,20 +83,15 @@ header ul li a {
 .nav ul li a{
     line-height: 1.25em;
     list-style: none;
-   border-radius: 8px;
+    border-radius: 8px;
 }
-
-
-.body{
-    background-color: #eee1de;
+body{
+    background-color: #f2f2f2;
 }
-
-
 .ul li {
     list-style:none;
 }
-
-span {    
+span {
     color: blue;
 }
 div {
@@ -126,45 +100,22 @@ div {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-  
-    }
-    
-    th, td {
-        padding: 15px;
-        text-align: center;
-    }
-    
-    thead {
-        background-color: #862a72;
-    }
-    
-    tbody {
-        background-color: #e951bb;
-    }
-    
-    tfoot {
-        background-color: #F2CC39;
-    }
 
-/*body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-image: linear-gradient(45deg,rgba(255, 0, 0, 0.76) 15%, rgb(172, 168, 223) 60%);   
 }
- h2,h3,a,p {
-     font-weight: 300;
- }*/
 
-/*
-.button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
+th, td {
+    padding: 15px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-   cursor: pointer; 
-   background-color: red;
-} */
+}
 
+thead {
+    background-color: #862a72;
+}
+
+tbody {
+    background-color: #e951bb;
+}
+
+tfoot {
+    background-color: #F2CC39;
+}
