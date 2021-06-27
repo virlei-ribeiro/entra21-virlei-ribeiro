@@ -6,47 +6,140 @@
     
     color: blue;
 }
-h1,h2,h3,p {
-    text-align: center;
-    color: darkmagenta;
+#header2{
+ margin-inline-start: 0px;
+ margin-inline-end: 0px;
+ margin: 0;
+}
+h1, h2,h3, h4, h5, h6, p {
+    margin-top: 0;
+    font-weight: 300;
+    font-family: 'Lobster';
+    color: rgb(143, 58, 92);
+    
+}
+.goiania{
+    position: absolute;
+    border: black;
+
+    }
+.itajai{
+    position:relative;
+    border: black;
+}
+.sp{
+    position:absolute;
+    border: black;
+}
+.buenos{
+    position:initial;
+    border: black;
+}
+.foz{
+   
+    border: black;
 }
 section, h2,  dd {
-    text-align: left;
+   
     color: darkred;
     
 }
 
-
-/*.center {
     
-  text-align: center;
-  color: blue;
+
+
+.nav {
+    
+    color: #3b088d;
+    background-color:  #f7eaea;     
+    text-align: center; 
+    width: auto;
+    padding: 1em;
+   cursor: default;
+}
+.nav ul{
+    display:flex;
+    justify-content: center;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     border-top: #3b088d;
 }
 
-body {
-    background-color:burlywood;
+   .nav ul li a.active{
+    background-color:  #e5ebf3;
+    box-shadow: none;
+} 
+
+.leva ul li{
+    display: inline-block;
+    list-style: none;
+}
+.link ul li{
+    display: inline-block;
+    list-style: none;
 }
 
+.button{
+    border: 2px solid white;
+    
+    background-color:  #e796e3;
+    width: auto;
+    padding: 1em;
+}
+nav ul a {
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    padding:0 6.25em;
+    color:#db0a0a;
+}
+header ul li a {
+    border: 2px solid white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10%;
+    list-style: none;
+    text-decoration: none;
+}
+.nav ul li a{
+    line-height: 1.25em;
+    list-style: none;
+   border-radius: 8px;
+}
+
+
+.body{
+    background-color: #eee1de;
+}
+
+
+.ul li {
+    list-style:none;
+}
 
 span {    
     color: blue;
-
-    table, th, td {
-        border: 4px solid black;
-        border-collapse: collapse;
+}
+div {
+    display: block;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  
     }
     
     th, td {
-        padding: 10px;
+        padding: 15px;
         text-align: center;
     }
     
     thead {
-        background-color: #A3CDD9;
+        background-color: #862a72;
     }
     
     tbody {
-        background-color: #FFFCE6;
+        background-color: #e951bb;
     }
     
     tfoot {
@@ -74,5 +167,4 @@ span {
    cursor: pointer; 
    background-color: red;
 } */
-</body>
-</html>
+
