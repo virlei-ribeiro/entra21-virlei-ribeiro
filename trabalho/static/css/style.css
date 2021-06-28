@@ -1,0 +1,121 @@
+#header {
+    text-align: center;
+}
+#header i {
+
+    color: blue;
+}
+#header2{
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
+}
+h1, h2,h3, h4, h5, h6, p {
+    margin-top: 0;
+    font-weight: 300;
+    font-family: 'Lobster';
+    color: rgb(143, 58, 92);
+
+}
+.estados {
+    padding: 5px;
+    width: 45%;
+    line-height: 25px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+    border: #c4c4c4 solid;
+    border-radius: 10px;
+}
+section, h2,  dd {
+    color: darkred;
+}
+
+.nav{
+    color: #3b088d;
+    background-color:  #f7eaea;
+    text-align: center;
+    width: auto;
+    padding: 1em;
+    cursor: default;
+}
+.nav ul{
+    display:flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: #3b088d;
+}
+
+.nav ul li a.active{
+    background-color:  #e5ebf3;
+    box-shadow: none;
+}
+
+.leva ul li{
+    display: inline-block;
+    list-style: none;
+}
+.link ul li{
+    display: inline-block;
+    list-style: none;
+}
+.button {
+    border: 2px solid white;
+    background-color:  #e796e3;
+    width: auto;
+    padding: 1em;
+}
+nav ul a {
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    padding:0 6.25em;
+    color:#db0a0a;
+}
+header ul li a {
+    border: 2px solid white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10%;
+    list-style: none;
+    text-decoration: none;
+}
+.nav ul li a{
+    line-height: 1.25em;
+    list-style: none;
+    border-radius: 8px;
+}
+body{
+    background-color: #f2f2f2;
+}
+.ul li {
+    list-style:none;
+}
+span {
+    color: blue;
+}
+div {
+    display: block;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+thead {
+    background-color: #862a72;
+}
+
+tbody {
+    background-color: #e951bb;
+}
+
+tfoot {
+    background-color: #F2CC39;
+}
