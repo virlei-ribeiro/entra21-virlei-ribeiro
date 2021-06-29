@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    
+        
+</style>
+</head>
+<body>
+        
+        <!-- Para cada um dos seguintes elementos, ache uma forma de acessá-los -->
+        <!-- console.log(document.body.firstElementChild)  -->
+        <!--console.log(document.body.children[1])-->
+        <!-- console.log(document.body.children[1].children)-->
+        
+        
+        <!-- Exercício 2   ?-->
+
+        <!-- Dado o seguinte HTML: -->
+        
+        <!-- <a name="list">the list</a> -->
+        
+            
+                <!-- <form name="search">
+                    <label>Search the site:
+                        <input type="text" name="search">
+                    </label>
+                    <input type="submit" value="Search!">
+                </form>
+    
+                <hr>
+    
+                <form name="search-person">
+                    Search the visitors:
+                    <table id="age-table">
+                        <tr>
+                            <td>Age:</td>       
+                            <td id="age-list">
+                            <label>
+                                <input type="radio" name="age" value="young">less than 18</label>
+                            <label>
+                                <input type="radio" name="age" value="mature">18-50</label>
+                            <label>
+                                <input type="radio" name="age" value="senior">more than 50</label>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>Additionally:</td>
+                            <td>
+                            <input type="text" name="info[0]">
+                            <input type="text" name="info[1]">
+                            <input type="text" name="info[2]">
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <input type="submit" value="Search!">
+                </form>
+            </body>
+            </html> -->
+    
+            <!-- Diga como acessar:
+            1. A <table> com o id="age-table". ? R:let elemento =   
+            console.log(elemento)
+
+            2. Todos os elementos <label> dentro da <table> (3 elementos). R: document.getElementById("age-table").querySelectorAll("label")
+            3. O primeiro <td> na tabela (com a palavra "Age"). R : document.getElementById("age-table").querySelector("td")
+            4. O <form> com name="search". ? R :console.log(document.body.firstElementChild)
+            5. O primeiro <input> nesse form. R: document.body.firstElementChild.querySelector("input:first-child")
+            6. O último <input> nesse form. ? R: console.log(document.body.lastElementChild.lastElementChild)
+
+            */ -->
+            <a name="list">the list</a>
+            <ul>
+                <li><a href="http://google.com">http://google.com</a></li>
+                <li><a href="/tutorial">/tutorial.html</a></li>
+                <li><a href="local/path">local/path</a></li>
+                <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+                <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+                <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+            </ul>
+            
+            <!-- Torne a cor dos links externos em laranja.
+            Um link é considerado externo quando:
+            1. O atributo href tem ://
+            2. Não começa com http://internal.com
+    
+            // Selecionando um link
+            let link = document.querySelector('a');
+    
+            // Aplicando a cor laranja
+            link.style.color = 'orange'; -->
+
+
+</body>
+</html>
