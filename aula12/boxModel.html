@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image</title>
+    <style>
+        *{
+            margin: 30px;
+        }
+
+        body {            
+            background-image: url(background.jpg);                        
+            background-position: center center;
+            background-size: cover;            
+             background-repeat: no-repeat; 
+             background-attachment: fixed;  
+        }
+
+          .quadro {
+            background-image: 
+                linear-gradient(to bottom, rgba(80, 80, 61, 0.5), rgba(0,0,255,0.5)),
+                url(hero.jpg);
+            background-size: cover;
+            background-position: center center;
+            height: 420px;
+            background-attachment: scroll;  
+        }  
+        .title {
+            text-align: center;
+            background-color: palegreen;
+            border-style: solid;
+            color: white;
+        }
+
+        .p {
+            text-align: center;
+            background-color: palegreen;
+            border-style: solid;
+            color: white;
+        }
+
+        div {
+            color: white;
+            background-color: blue;
+            padding: 10px;
+            border: 10px solid yellow;
+            outline: 5px solid green;
+            margin: 10px;   
+        }
+        div p {
+            background-color: yellow;
+        }
+        /* .box-sizing {
+            box-sizing: border-box; 
+        } */
+
+    </style>
+</head>
+<body>
+    <h1 class="title">background Image</h1>
+    <p>Inserido antes da Div :Aprendendo a inserir elementos no css e rolagem de texto entre outro elementos e vetores</p>
+    <div class="quadro"></div>
+    <div class="quadro"></div>
+    
+    <script>                
+        document.querySelector("div").innerHTML  = "<p>Teste</p>"
+    </script>
+    <!-- <div class= "box-sizing"></div> -->
+   
+</body>
+</html>
