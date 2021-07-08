@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Function</title>
+</head>
+<body>
+    <script>
+        // var usuario = {
+        //     nome:"Airton",
+        //     idade: 26,
+        //     youtube: "Programador a bordo",
+        //     'ultimo-nome':'teshima'
+            
+        //  };
+
+        // console.log(usuario);
+        //  console.log(usuario.idade);
+        //  console.log(usuario.nome);
+        //  console.log(usuario.youtube);
+        //  console.log(usuario['ultimo-nome']);
+         
+        //  usuario.ano = 2019;
+        //  console.log(usuario.ano)
+   
+        // console.log(usuario);
+         var usuario2 = {
+           digaOi: function(nome) {
+                 return `olá ${name}`;
+             }
+         };
+         console.log(usuario2.digaOi(`ayrton`));
+          console.log(usuario2.digaOi(`teshima`));
+          var cor ='amarelo';
+
+          var usuario3 = {
+           nome:'Airton',
+            cor: cor
+          };
+          console.log(usuario3);
+          
+          var usuario4 = {
+             nome:"Airton",
+            idade: 26
+        };
+        var extraInfo = {
+             pais:"brasil",
+            estado: 'Rio de janeiro'
+        };  
+          // {obj novo}= objeto em um Único ou Alvo vazio; novo!!
+        var novoUsuario = Object.assign{},usuario4,extraInfo); // criou novo Usuario para acres os dois!!
+        console.log(novoUsuario);
+
+        Object.assign(usuario4,extraInfo);
+        console.log(usuario4);
+
+
+    </script>
+</body>
+</html>
