@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificando o DOM</title>
+    <style>
+        .alert {
+            padding: 1em 1em;
+            margin-bottom: 1em;
+            border: 1px solid #b6d4fe;
+            background-color: #cfe2ff;
+            color: #084298;
+            border-radius: .25em;
+        }
+        ol, ul{
+            border-style: solid;
+            padding: 2em 2em;
+            margin-bottom: 2em;
+            border: 5px solid palegreen;
+            background-color: palegreen;
+            color: #084298;
+        }
+        table, th,td {
+             border: 1px solid black;
+             background-color: rgb(245, 125, 161);
+             border-radius: .25em; /* bordas em cada elemento interno*/             
+        }
+
+        table{
+            width: 100%;
+             height: 20px;
+
+        }
+    </style>
+</head>
+<body>
+     <ol>  <!--criei uma lista com elementos -->
+       
+            <li>Filho </li>
+            <li>Filho </li>
+            <li>Filho </li>
+            <li>Filho </li>
+
+     </ol>
+    
+    <ul>
+        <li>João Pedro</li>            
+        <li>João Paulo</li>
+        <li>João Victor</li>            
+        <li>João Miguel</li>
+        
+    </ul>
+
+    <table id="tabela-pessoas"> <!--Criou uma id (#) para trabalhar a remove ou acrescentar elementos-->
+        <tr>
+          <th>Nº</th>
+          <th>Name</th>
+          <th>Idade</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>João Pedro</td>
+          <td>10</td> 
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>João Paulo</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>João Victor</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>João Miguel</td>
+            <td>20</td>
+          </tr>
+
+      </table>
+
+    <script>
+
+        // Criando um elemento
+         let div = document.createElement("div")
+
+        // // Adicionando a classe ao elemento
+         div.className = "alert"
+
+        // // // Preenchendo a div com o texto
+         div.textContent = "Alerta"
+
+        // // // Inserindo o elemento na página
+         document.body.append(div)
+         
+
+         let paragrafo = document.createElement("paragrafo")
+        //  let p = document.createElement("p")
+        //  paragrafo.textContent = "Vamos adicionar mais conteúdos"
+         paragrafo.textContent = "Olá, eu sou um paragrafo"
+         document.body.append(paragrafo)
+         
+        //  document.body.elem.before(p)
+        //  paragrafo.textContent = "Vamos adicionar mais conteúdos"
+        // /* 
+        // Métodos de inserção:
+        
+        // elem.append(nodes ou strings) -> Adiciona o node ou a string no final do elem
+        // elem.prepend(nodes ou strings) -> Adiciona o node ou a string no começo do elem
+        // elem.before(nodes ou strings) -> Adiciona o node ou a string antes do elem
+        // elem.after(nodes ou strings) -> Adiciona o node ou a string depois do elem
+        // elem.replaceWith(nodes ou string) -> Substitui elem pelo node ou string
+        // */
+
+        //  let lista = document.querySelector("ul") // aqui neste caso só selecionaria as ("l)
+         let lista = document.querySelector("ol")
+         lista.before("Antes: Número de filhos")
+         lista.after("Depois: Nomes dos filhos")
+         lista.insertAdjacentHTML("afterend", "<h2>Inserido com insertAdjacent: Nomes </h2>")
+         lista.insertAdjacentHTML("beforebegin", "<h1>Inserido com insertAdjacent: Tabela </h1>")
+         lista.insertAdjacentHTML("beforebegin", "<p>Descreva aqui a quantidade de filhos do casal: <strong>Tabela Quant Filhos</strong></p>")
+        
+        // let primeiroLi = document.createElement("li")
+        // primeiroLi.textContent = "prepend"
+        // lista.prepend(primeiroLi)
+
+        // let ultimoLi = document.createElement("li")
+        // ultimoLi.textContent = "append"
+        // lista.append(ultimoLi)
+
+        /* 
+        Inserir um trecho HTML (similar ao innerHTML):
+        elem.insertAdjacentHTML("beforebegin", <html>) -> Insere HTML antes do elemento
+        elem.insertAdjacentHTML("afterbegin", <html>) -> Insere HTML dentro do elemento (no começo)
+        elem.insertAdjacentHTML("beforeend", <html>) -> Insere HTML dentro do elemento (no final)
+        elem.insertAdjancentHTML("afterend", <html>) -> Insere HTML depois do elemento
+        
+        
+        */
+        //  lista.insertAdjacentHTML("afterend", "<h2>Inserido com insertAdjacent</h2>")
+
+        let tabelaPessoas = document.querySelector("#tabela-pessoas") 
+        tabelaPessoas.remove()
+        //  aqui ele removeu e acrescentou novamente em outra posição do Html!!
+        document.body.append(tabelaPessoas)
+
+
+        // // Remover um node
+        // // {
+        //     let lista2 = document.querySelector("ul")
+        //     lista2.remove()
+        // // }
+
+        
+        // {
+        //     // Clonar um node
+        //     // cloneNode(true) -> Clona o node com todos os elementos filhos
+        //     // cloneNode(false) -> Clona o node sem os elementos filhos        
+                // let div2 = div.cloneNode(true)
+                // div2.textContent = "Outro alerta"
+                // document.body.append(div2)
+        // }
+
+        /*
+        Exercício
+        1 - Crie uma função clear(elem) que remove todos os filhos de um elemento.
+
+        Utilize o seguinte HTML para testar:
+        <ol id="elem">
+            <li>Filho 1</li>
+            <li>Filho 2</li>
+        </ol>
+
+        2 - Insira <li>Item 2</li><li>Item 3</li> na seguinte lista:
+        <ul>
+            <li>Item 1</li>            
+            <li>Item 4</li>
+        </ul>
+
+        Insira os elementos na ordem correta.
+
+        3 - Escreva o script necessário para adicionar em cada <li> o número de descendentes (se houver).
+        <ul>
+            <li>Animais
+                <ul>
+                    <li>Mamíferos
+                        <ul>
+                            <li>Vacas</li>
+                            <li>Macacos</li>
+                            <li>Cachorros</li>
+                            <li>Tigres</li>
+                        </ul>
+                    </li>
+                    <li>Outros
+                        <ul>
+                            <li>Cobras</li>
+                            <li>Pássaros</li>
+                            <li>Lagartos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        Resultado esperado:
+        <ul>
+            <li>Animais [9]
+                <ul>
+                    <li>Mamíferos [4]
+                        <ul>
+                            <li>Vacas</li>
+                            <li>Macacos</li>
+                            <li>Cachorros</li>
+                            <li>Tigres</li>
+                        </ul>
+                    </li>
+                    <li>Outros [3]
+                        <ul>
+                            <li>Cobras</li>
+                            <li>Pássaros</li>
+                            <li>Lagartos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        */
+    </script>
+</body>
+</html>
