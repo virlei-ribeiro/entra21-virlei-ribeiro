@@ -8,9 +8,9 @@
 <body>
         <select>
             <option value="">Selecione alguma coisa</option>
-            <option value="1">Opção 1</option>
-            <option value="2">Opção 2</option>
-            <option value="2">Opção 3</option>
+            <option value="valor inicial">Opção 1</option>
+            <option value="Juros">Opção 2</option>
+            <option value="Meses">Opção 3</option>
         </select>
         <br>
         <input type="text">
@@ -22,7 +22,7 @@
             input do tipo checkbox/radio é alterado.
             */
             let select = document.querySelector("select")
-            select.addEventListener("change", (e) => alert(select[select.selectedIndex].text))
+            select.addEventListener("change", (e) => console.log(select[select.selectedIndex].text))
     
             /*
             Input dispara quando o atribute value é modificado pelo usuário.        
