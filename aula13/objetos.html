@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var usuario = {
+            nome:"Airton",
+            idade: 26,
+            youtube: "Programador a bordo",
+            'ultimo-nome':'teshima',
+            competencias: {
+             linguagens: ['javaScript','Python','go','Scala','php'],
+             instrumentosMusicais: ['guitarra','Baixo','Bateria']
+            }
+         };
+
+        console.log(usuario);
+         console.log(usuario.idade);
+         console.log(usuario.nome);
+         console.log(usuario.youtube);
+         console.log(usuario['ultimo-nome']);
+         usuario.ano = 2019;
+         console.log(usuario.ano)
+        // delete usuario.idade;
+        console.log(usuario);
+
+        usuario.hobbies =['musica','programar','viajar'];
+        console.log(usuario);
+         // pode ser usado esta forma no console.log ou adicionar junto na Var : airton
+          usuario.competencias = {
+              linguagens: ['javaScript','Python','go','Scala','php'],
+              instrumentosMusicais: ['guitarra','Baixo','Bateria']
+          };
+         console.log(usuario);
+    </script>
+</body>
+</html>
