@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercícios do forms</title>
+    <title>exercícios de links</title>
 </head>
-<style>
-  
-</style>
+ <style>
+     body {
+         background-color: bisque;
+     }
+     h2 {
+         color: brown;
+         text-align: center;
+         background-color: rgb(137, 129, 170);
+     }
+ </style> 
 <body>
-   
+    <h2>Ficha de Estado Civil</h2>
+    <label for="estadocivil">Estado Civil</label>
+    <select name="estadoCivil"> 
+        <option value="vazio">selecione uma opção</option>
+        <option value="solteiro">Solteiro</option>
+        <option value="casado">Casado</option>
+        <option value="separado">Separado</option>
+        <option value="divorciado">Divorciado</option>
+        <option value="viuvo">Viúvo</option>
+        </select><br><br>
+
+    <label for="Idade">Idade: 
+    <input type="number" name="Idade" id="Idade"><br><br>
+    <label for="Comentário">Comentário:</label>
+    
+    <textarea name="coment" id="coment" required cols="20" rows="5" maxlength="100"></textarea>
+    <button>Enviar</button>
+
+    
+</label>
+    <script>
+        let EstadoCivil = querySelector("#Estado Civil"),
+        
+        
+        /* 
+            Existem alguns comportamentos padrões que acontecem em 
+            determinados eventos:
+            * clique em um link inicia a navegação
+            * clique em um botão submit envia o formulário
+            * pressionar um botão e mover ele sobre o texto seleciona ele
+            * clicar com o botão direito abre a janela de opções            
+            
+            Se quisermos cancelar esse comportamento padrão podemos utilizar
+            o método event.preventDefault()
+        */
+
+        let a = document.querySelector("a")
+
+        a.addEventListener("click", (event) => event.preventDefault())
+        a.addEventListener("contextmenu", (event) => event.preventDefault())
+    
+
+
+       const div = document.querySelectorAll("div")
+      div.addEventListener("click" , ()) {
+
+      } 
+    </script>
 </body>
-<script>
-    // const div = document.querySelectorAll("div")
-    // div.addEventListener("click" , () {
-
-    // }
-
-</script>
 </html>

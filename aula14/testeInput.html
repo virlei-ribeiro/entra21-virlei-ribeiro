@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>teste input</title>
+</head> 
+<!-- <style></style> -->
+<body>
+
+<h2>Criando label e Form</h2>
+<label action="email">digite seu email:
+<input type="email" name= "email" id="email">
+    <!-- <input type="email"> => Inseriu o campo de dig !!-->
+</label><br><br>
+<!-- <div id="erro"> => Criou um Único identificador para este erro </div>-->
+    <div id="erro"></div>
+    <label for="email12"> 
+        <!-- fez o laço de repetição FOR para percorrer o email e comparar a validação-->
+        Digite um email inválido e tente sair:
+        <input type="email" name="email2" id="email2">
+        <div id="selecionavel">Clique na DIV</div>
+    </label>
+
+ <script> 
+    let email = document.querySelector("#email"),  //=> script primeiro quero selecionar a modelo para o filme !!
+            erro = document.querySelector("#erro")
+
+            email = addEventListener ("blur") , { // primeiro evento ("blur")
+                if (!email.value.includes("@")) {
+                
+                    email.classList.add("invalido")
+                    erro.textContent = "Por favor digite um email válido"
+                }
+            }
+            // add event listened ("focus") que é outro evento ("focus") 
+            email.addEventListener("focus", (event)  {    // no evento FOCUS  ele definiu (event)         
+            if (email.classList.contains("invalido")) {
+                email.classList.remove("invalido")
+                erro.innerHTML = ""
+            }
+        })
+        email.addEventListener("focus", (event) => {            
+            if (email.classList.contains("invalido")) {
+                email.classList.remove("invalido")
+                erro.innerHTML = ""
+            }
+        })
+
+        // Não deixar o usuário preencher outro input
+        let email2 = document.querySelector("#email2")
+
+        email2.addEventListener("blur", () => {
+            if (!email2.value.includes("@")) {
+                email2.classList.add("erro")
+                email2.focus()
+            } else {
+                email2.classList.remove("erro")
+            }
+        })
+
+        // Para tornar um elemento selecionável
+        let div = document.querySelector("#selecionavel")
+        div.tabIndex = 0
+        div.focus()
+
+        // Não deixar o usuário preencher outro input
+    // let email2 = document.querySelector("#email2")
+
+    //     email2.addEventListener("blur", ()  {
+    //         if (!email2.value.includes("@")) {
+    //             email2.classList.add("erro")
+    //             email2.focus()
+    //         } else {
+    //             email2.classList.remove("erro")
+    //         }
+    //     })
+        // Para tornar um elemento selecionável
+        // let div = document.querySelector("#selecionavel")
+        // div.tabIndex = 0
+        // div.focus()
+
+</script>     
+</body>
+</html>
+
+<!-- // Adicione alguns recursos de validação ao formulário:
+
+// * Faça com que todos os campos de entrada sejam obrigatórios para preencher antes que o 
+// formulário possa ser enviado.
+
+// * Altere o tipo dos campos "Endereço de e-mail" e "Número de telefone" para que o navegador 
+// aplique uma validação mais específica adequada aos dados solicitados.
+// Alterar a mensagem de email: "E-mail inválido"
+
+// * Atribua ao campo "Nome de usuário" um comprimento obrigatório de 5 a 20 caracteres, ao campo
+// "Número de telefone" um comprimento máximo de 15 caracteres e ao campo "Comentário" um 
+// comprimento máximo de 200 caracteres.
+
+// * Tente enviar seu formulário - ele deve se recusar a enviar até que as restrições acima sejam 
+// seguidas e fornecer mensagens de erro adequadas. Para ajudar, você pode querer adicionar alguns 
+// estilos CSS simples para mostrar quando um campo de formulário é válido ou inválido. -->

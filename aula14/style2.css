@@ -1,0 +1,41 @@
+/* #header {
+    text-align: center;
+} */
+
+body {
+     background-color: rgb(210, 231, 17);
+     /* border-style: inset;
+    border-width:100%;  */
+}
+
+div {
+    text-align: center;
+    font-size: large;
+    border-style: solid;
+    background-color: red;
+    width: 100%;
+    height: 100px;
+}
+
+ /* h2 {
+        background-color: rgb(238, 12, 12);
+        text-align: center;          
+        border-style: groove; 
+        width: 100%;
+        height: 50 px
+    }  */
+input:focus, textarea:focus {
+    border-color: rgb(5, 51, 20) !important;
+}
+
+input:invalid, textarea:invalid {
+    border-color: red;
+}
+
+input:valid, textarea:valid {
+    border-color: rgb(14, 3, 73);
+}
+label {
+    font-style: italic;
+    color: blue;
+}

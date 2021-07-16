@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h2 {
-            background-color: powderblue;
-        }
-    </style>
+    <title>Document action</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- <style></style> -->
 </head>
 <body>
-    <h2>Inserindo Input</h2>
+    <div class="titulo">
+        <h2>Inserindo Input:Dados clientes</h2>
+    </div>
+
     <form>      <!--criu-se primeiro um Formulário !<form>-->  
         <ul>  <!--pode ser lista, ou outro!!-->
             <li>
                 <!-- <label for="">Nome de usuário</label> -->
                 <label for="uname">Name</label>
-                <input type="text" name="Name" id="Name" minlength="5" maxlength="20">
+                <input type="text" name="Name" id="Name" required minlength="5" maxlength="20"><br><br>
                 <!-- criado input type="text" name="uname" id="uname"> -->
             </li>
              <li>
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" required>
+                <input type="text" name="email" id="email" required><br><br>
                 <!-- <input type="text" name="email" id="email"> -->
             </li>
             <li>
                 <label for="phone">Telefone:</label>
-                <input type="text" name="phone" id="phone">
+                <input type="tel" name="phone" id="phone" required minlength="5" maxlength="15"><br><br>
             </li>
             <li>
-                <label for="comment">Comentário:</label>
-               <textarea name="coment" id="coment" cols="30" rows="10">Preencher os campos de acordo:</textarea>
+                <label for="coment">Comentário:</label>
+               <textarea name="coment" id="coment" required cols="30" rows="10" maxlength="100"></textarea>
             </li>
             <li>
                 <button>Enviar comentário</button>
-                <a href="changeInput.html">Ir para a outra pagina</a>
-
+                <a href="changeInput.html">Ir para a outra pagina</a> <br>
+                <!-- <button>Clique e vá para outra pág</button>
+                <a href="changeInput.html">clique e vá para outra pág</a> -->
             </li> 
         </ul>
     </form>
     <script>
-        const textarea = document.querySelector("#coment")
-        div.classename = "alert"
-        div.text
+        // const textarea = document.querySelector("#coment")
+        // div.classename = "alert"
+        // div.text
     </script>
 </body>
 </html>
