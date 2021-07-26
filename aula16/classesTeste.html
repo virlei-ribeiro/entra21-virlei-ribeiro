@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento classe de teste</title>
+</head>
+<body>
+    <h2>Teste classes pessoas</h2>
+    <script>
+        class pessoa { // dentro da classe pessoa
+           
+            constructor (nome, sobreNome) { // atributos da pessoa !!
+                this.nome = nome
+                this.sobreNome = sobreNome
+            }
+
+            dizOi() { // Método
+                alert(`Olá o meu nome é: ${this.nome}`)
+            }
+        }
+        let pessoa = new Pessoa("jussara","lima")
+        pessoa.dizOi()       
+        
+
+        // Para instanciar um usuário (Criar um objeto do tipo Usuario)
+
+        /* let usuario1 = new Usuario("William", "Círico"),
+            usuario2 = new Usuario("Pedro", "da Silva")
+        usuario1.dizOi()
+        usuario2.dizOi()      */
+
+
+    </script>
+</body>
+</html>
