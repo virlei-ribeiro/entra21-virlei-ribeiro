@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Classes com herança</title>
+</head>
+<body>
+    <script>
+        /* exemplo 2 com classes */
+
+        class Hamster {
+            // altura = 1; // todos vão ter esta caracteristica de altura
+            constructor(nome) {
+                this.nome = nome;
+                this.estomago = []
+            }
+
+            comer(comida) {
+                this.estomago.push(comida);
+            }
+        }
+
+        const hamtaro = new Hamster("hamtaro");
+        const fofuxo = new Hamster("fofuxo");
+
+        hamtaro.comer("Maçã")
+        console.log(hamtaro.estomago) 
+        // console.log(hamtaro.altura) // todos tem esta caracteristica do pai!!
+        // console.log(fofuxo.altura) // todos tem esta caracteristica do pai!!
+
+        console.log(fofuxo.estomago) 
+
+    </script>
+</body>
+</html>

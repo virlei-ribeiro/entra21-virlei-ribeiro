@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Exercícios Promise</title>
+</head>
+<body>
+    <script>
+
+        /*
+        Podemos encadear promises, isso significa que podemos utilizar o retorno 
+        da promise em uma outra função e utilizar o retorno dessa função em outra
+        
+
+        function criaPromise(numero) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(numero)
+                }, 3000)
+            })
+        }
+        criaPromise(10)
+            .then(resultado => console.log(resultado)) */
+
+        function soma (n1, n2) {
+            return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const resultado = n1 + n2;
+
+                        if (resultado % 2 !== 0) {
+                            reject(new Error("O valor é ímpar"));
+                        } else {
+                            resolve(resultado);
+                        }
+                    }, 2000);
+                })
+            }
+
+            somar(1, 2)
+                .then(resultado => console.log(`A operação foi bem sucedida! O número ${resultado} é par`))
+                .catch(error => console.log(`A operação falhou! ${error.message}`));
+
+                /* 2) Exercicio : // dobrar os segundos utilizando promise */ 
+            
+            function dobrarEm5Segundos(numero) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        if (isNaN(numero)) {
+                            reject(new TypeError("O valor precisa ser numérico"));
+                        } else {
+                            const dobro = numero * 2;
+                            resolve(dobro);
+                        }
+                    }, 5000);
+                });            
+            }
+
+            dobrarEm5Segundos(2)
+                .then(resultado => console.log(`A operação foi bem sucedida! O resultado é ${resultado}`))
+                .catch(error => console.log(`A operação falhou! ${error.message}`));
+            
+            /* 3) Exercício : */ // lista de pessoas com novo usuário !! 
+            const listaPessoas = [
+                {
+                    nome: "João",
+                    idade: 25,
+                    email: "joao@email.com"
+                },
+                {
+                    nome: "Pedro",
+                    idade: 33,
+                    email: "pedro@email.com"
+                },
+                {
+                    nome: "Marcos",
+                    idade: 16,
+                    email: "marcos@email.com"
+                }
+            ];
+
+            class UserNotFoundError extends Error {
+                constructor(message) {
+                    super(message);
+                    this.name = "UserNotFoundError";
+                }
+            }
+
+            function obtemUsuarioPeloNome(nome) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const usuario = listaPessoas.find(pessoa => pessoa.nome === nome);
+
+                        if (!usuario) {
+                            reject(new UserNotFoundError("Usuário não está cadastrado"));
+                        } else {
+                            resolve(usuario);
+                        }
+                    }, 3000);
+                });                        
+            }
+
+            obtemUsuarioPeloNome("Pedr")
+                .then(usuario => console.log(`Usuário encontrado:\nnome: ${usuario.nome}\nidade: ${usuario.idade}\nemail: ${usuario.email}.`))
+                .catch(error => console.log(`Ocorreu um erro! ${error.message}.`));
+            
+    </script>
+</body>
+</html>

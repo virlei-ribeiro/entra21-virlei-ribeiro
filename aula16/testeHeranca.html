@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento teste herança 1</title>
+</head>
+<body>
+    <script>
+
+let cabeca = { // exercício 1 : descreve a Variável cabeça !!
+            oculos: 1 // atibuto óculos tem na cabeça ! (pertence ao pai) !
+        }
+
+        let mesa = { // mesa é filho herança da cabeça !! com mais um atributo (caneta)
+            __proto__: cabeca, // __ duas vezes seta (__andrelaine)
+            caneta: 3
+        }
+
+        let cama = { // herda de mesa e cabeça
+            __proto__: mesa, // coloquei __proto__type
+            lenco: 1,
+            travesseiro: 2
+        }
+
+        let bolso = {
+            __proto__: cama,
+            dinheiro: 200
+        }
+        console.log(bolso.caneta) // 3
+        console.log(cama.oculos) // 1
+        console.log(mesa.dinheiro) // undefined
+        
+    </script>
+</body>
+</html>

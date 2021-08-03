@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento teste herança 3</title>
+</head>
+<body>
+    <script>
+/*
+        3) Exercicio 3 : 
+        Nesse problema temos dois hamster: Hamtaro e Fofuxo. Os dois herdam do objeto hamster.
+        Quando alimentamos um deles, o outro também fica cheio. Por que? Como consertar isso? */
+       
+        // let hamster = {
+        //     estomago : [],
+
+        //     comer(comida) {
+        //         this.estomago.push(comida)
+        //     }
+        // }
+
+        //  let hamtaro = {
+        //     estomago : [],
+        //     __proto__ : hamster
+        // }
+
+        // let fofuxo = {
+        //     estomago : [],
+        //     __proto__ : hamster
+        // }
+
+        // hamtaro.comer("Maçã")
+        // console.log(hamtaro.estomago) // recebe alimento maça ?
+
+        // console.log(fofuxo.estomago) // não recebeu nda !!
+
+
+           let animal =  {
+                altura : 0.2, // substituir ponto a virgula
+                come : true  
+           }
+
+           let gato = {
+               pula : true,
+               brinca : true,
+              
+           }
+        // Defindo o Prototype de gato como animal (gato herda os atributos e métodos de animal):
+            gato.__proto__ = animal
+        console.log(gato.come) 
+        console.log(gato.altura)
+
+    </script>
+</body>
+</html>
