@@ -1,5 +1,5 @@
 // O módulo fs nos permite interagir com o file system.
-/* const fs = require("fs");
+ const fs = require("fs");
 const fsPromises = require("fs/promises");
 const path = require("path");
 
@@ -28,7 +28,7 @@ fs.stat(path.resolve(__dirname, "indexCowsay.js"), (err, stats) => {
     } catch (err) {
         console.log(err.message);
     }
-})(); */
+})(); 
 
 /*  Exercício 1: Lendo as informações de um arquivo (Promise)
 1) Crie um script que leia o arquivo exercioNomes.txt e mostra todos os nomes que começam com a letra A
@@ -36,17 +36,29 @@ presentes no arquivo.
 
 Obs.: Nome e sobrenome. */ 
 
-/* const fsp = require("fs/js");
-const path = require("path");
-const { EOL } = require("os");
+// const fsp = require("fs/promises");
+// const path = require("path");
+// const { EOL } = require("os");
 
-(async () => {
-    try {
-        const data = await fsp.readFile(path.resolve(__dirname, "exercicioNomes.txt"));
+// (async () => {
+//     try {
+//         const data = await fsp.readFile(path.resolve(__dirname, "exercicioNomes.txt"));
         
-        const nomes = data.toString("utf-8").split(EOL);
+//         const nomes = data.toString("utf-8").split(EOL);
 
-        console.log(nomes.filter(nome => nome[0].toUpperCase() === "A"));        
+//         console.log(nomes.filter(nome => nome[0].toUpperCase() === "A"));        
+//     } catch (err) {
+//         console.log(err.message);
+//     }
+// })(); 
+
+/*(async () => { // funcão assincrona com uso do try e catch !!!
+    try {
+        const data = await fsp.readFile(path.resolve("exercicioNomes.txt"));
+        const dataString = data.toString("utf-8"); 
+        const nomes = dataString.split(EOL);
+        const nomesComA = nomes.filter(nome => nome[0] === "A")
+        console.log(nomesComA);        
     } catch (err) {
         console.log(err.message);
     }
@@ -64,7 +76,7 @@ email: [email do usuário]
 
 Caso o usuário não existir mostrar a mensagem: "Usuário não foi encontrado." */ 
 
-async function getUserByName(name) { // criou a funçao getUserByName !!
+/* async function getUserByName(name) { // criou a funçao getUserByName !!
     // 1) Ler o arquivo
     const data = (await fsp.readFile(path.resolve("users.json"))).toString("utf-8");    // na VAR definido o Caminho (path.resolve("users.json") 
     
@@ -90,11 +102,47 @@ async function getUserByName(name) { // criou a funçao getUserByName !!
    } else {
        console.log("Usuário não encontrado");
    }
-})();
+})(); */
 
 
 /* 3) Faça um script que leia o arquivo exercioNomes.txt e utilize a biblioteca chalk (https://www.npmjs.com/package/chalk) para
 mostrar os nomes que começam com a letra A em vermelho, os nomes que começam com a letra C em azul e os
-nomes que começam com a letra D em magenta.
+nomes que começam com a letra D em magenta. */
+ const fsp = require("fs/promises");
+const path = require("path");
+const { EOL } = require("os");
+const chalk = require("chalk");
 
-*/
+(async () => {
+    try {
+        const data = await fsp.readFile(path.resolve(__dirname, "exercicioNomes.txt"));
+        
+        const nomes = data.toString("utf-8").split(EOL);
+
+        for (let nome of nomes) {
+            switch(nome[0]) {
+                case "A":
+                    console.log(chalk.red(nome));
+                    break;
+                case "C":
+                    console.log(chalk.blue(nome));
+                    break;
+                case "D":
+                    console.log(chalk.magenta(nome));
+                default:
+                    console.log(nome);
+            }
+        }
+        // const nomesComA = nomes.filter(nome => nome[0].toUpperCase() === "A");
+        // const nomesComC = nomes.filter(nome => nome[0].toUpperCase() === "C"); 
+        // const nomesComD = nomes.filter(nome => nome[0].toUpperCase() === "D"); 
+        
+        // console.log(chalk.red(nomesComA));
+        // console.log(chalk.blue(nomesComC));
+        // console.log(chalk.magenta(nomesComD));
+    } catch (err) {
+        console.log(err.message);
+    }
+})(); 
+
+

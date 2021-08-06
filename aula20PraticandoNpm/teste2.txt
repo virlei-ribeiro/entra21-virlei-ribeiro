@@ -1,0 +1,2 @@
+Esse texto foi criado através de um arquivo no node
+Essa é uma nova linha
