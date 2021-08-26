@@ -3,6 +3,7 @@ const express = require("express");
 const app = express(); // app recebe o Express
 const PORT = 3000; // porta de acessso entrada!!
 
+app.use(express.json());
 
 const users = [
     { id: 1, name: "Pedro", email: "pedro@email.com" },
@@ -10,33 +11,47 @@ const users = [
     { id: 3, name: "Marcos", email: "marcos@email.com" },
 ];
 
-app.get("/users", (request, response) => { // call back recebe argumentos !!! response é resposta
-    response.json(users);
-});
+//importando as Rotas
+const usersRoutes = require("./routes/usersRoutes");
 
-app.get("/users/:id", (req, res) => {
+//definindo as rotas
+app.use("/users", usersRoutes);
+
+
+
+// criar usuario
+
+
+// atualizar informações: precisa definir o "/Users/ :id"
+app.put("/users/:id", (req, res) => { // put = inserir ou modificar
+    const { name } = req.body;   // para mudar o Usuario, pelo {Name} = verificando no body!!
     const userId = req.params.id;
-
-    const user = users.find(user => user.id == userId);
+    const user = users.find(user => user.id == userId); // buscar ou encontrar usuario.encontrando ele (usuario.id == usuarioId // seu codigo cadastro!!)
 
     if (!user) {
-        res.status(404).json({ message: "User not found!" });
+        return res.status(404).json({ mensage: "user not find" });
     }
 
+    user.name = name; // chama a função 
+    res.json(user); // sempre precisa de uma resposta  requerimento !!
 
-    res.json(user);
+});
+
+app.delete("/users/:id", (req, res) => {
+    // Obter o id dos parametros
+    const userId = req.params.id;
+    // Verificar se o usuario com aquele id existe
+    const userIdInDB = users.findIndex(user => user.id == userId);
+    if (userIdInDB < 0) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    // Remover o usuario do bd ()
+    users.splice(userIdInDB, 1);
+    res.status(204).end();
 });
 
 
 
-app.post("/", (request, response) => { // request = receber do usuário
-    response.send("Metodo POST");
-});
-app.put("/", (request, response) => { // put = inserir ou modificar
-    response.send("Metodo PUT");
-});
-app.delete("/", (request, response) => { // deletar arquivos
-    response.send("Metodo DELETE");
-});
+
 // Rotas do ususário "/ users"
 app.listen(PORT, () => console.log("o servidor está rodando...")); // ouça o arquivo !! sempre última linha
