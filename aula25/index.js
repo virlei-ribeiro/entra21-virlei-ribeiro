@@ -35,7 +35,7 @@ app.put("/users/:id", (req, res) => { // put = inserir ou modificar
     user.name = name; // chama a função 
     res.json(user); // sempre precisa de uma resposta  requerimento !!
 
-});
+}); // esta parte foi copiado e importado no CONTROLLER !!!
 
 app.delete("/users/:id", (req, res) => {
     // Obter o id dos parametros
@@ -48,7 +48,7 @@ app.delete("/users/:id", (req, res) => {
     // Remover o usuario do bd ()
     users.splice(userIdInDB, 1);
     res.status(204).end();
-});
+}); // esta parte foi copiado e importado no CONTROLLER !!!
 
 
 

@@ -1,6 +1,6 @@
-const users = require("../models/user");
+const users = require("../models/user"); 
 
-function getAllUsers(req, res, next) {
+function getAllUsers(req, res, next) { // Defini a function a ser executados!!
     res.json(users); 
 }
 
