@@ -1,9 +1,17 @@
-const users = require("../models/user"); 
+const {users} = require("..db/models"); 
+const { User } = require("../")
 
-function getAllUsers(req, res, next) { // Defini a function a ser executados!!
-    res.json(users); 
+async function getAllUsers(req, res, next) { // Defini a function a ser executados!!
+    try {
+        const users = await user.findAll();
+        res.json(users); 
+
+} catch (err) {
+    console.log(err);
+    res.status(500).jason({ message: "Derver error"});
 }
 
+}
 
 function getUserById(req, res, next) {
     const userId = req.params.id;

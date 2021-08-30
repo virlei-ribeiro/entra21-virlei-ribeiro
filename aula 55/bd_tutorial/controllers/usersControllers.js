@@ -1,7 +1,16 @@
-const users = require("../models/user");
+const { User } = require("../db/models");
 
-function getAllUsers(req, res, next) {
-    res.json(users);
+
+
+async function getAllUsers(req, res, next) {
+    try {
+        const users = await User.findAll();
+
+        res.json(users);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Server error" });
+    }
 }
 
 function getUserById(req, res, next) {
@@ -21,7 +30,7 @@ function createUser(req, res, next) {
 
     // Verificando se o e-mail já está cadastrado
     const userAlreadyExists = users.find(user => user.email === email);
-    
+
     if (userAlreadyExists) {
         return res.status(409).json({ message: "User already exists" });
     }
@@ -50,20 +59,20 @@ function updateUser(req, res, next) {
 }
 
 function deleteUser(req, res, next) {
-     // Obter o id dos parametros
-     const userId = req.params.id;
-    
-     // Verificar se o usuario com aquele id existe
-     const userIdInDB = users.findIndex(user => user.id == userId);
- 
-     if (userIdInDB < 0) {
-         return res.status(404).json({ message: "User not found" });
-     }
- 
-     // Remover o usuario do bd ()
-     users.splice(userIdInDB, 1);
- 
-     res.status(204).end();
+    // Obter o id dos parametros
+    const userId = req.params.id;
+
+    // Verificar se o usuario com aquele id existe
+    const userIdInDB = users.findIndex(user => user.id == userId);
+
+    if (userIdInDB < 0) {
+        return res.status(404).json({ message: "User not found" });
+    }
+
+    // Remover o usuario do bd ()
+    users.splice(userIdInDB, 1);
+
+    res.status(204).end();
 }
 
 module.exports = {
