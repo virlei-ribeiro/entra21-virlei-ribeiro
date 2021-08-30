@@ -4,8 +4,6 @@ const router = express.Router();
 //importando o controller 
 const usersControllers = require ("../controllers/usersControllers");
 
-
-
 router.get("/", usersControllers.getAllUsers);
 
 router.get("/:id", usersControllers.getUserById);
