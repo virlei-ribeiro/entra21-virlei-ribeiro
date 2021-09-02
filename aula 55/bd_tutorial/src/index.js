@@ -4,12 +4,17 @@ const PORT = 3000;
 
 // Importando as rotas
 const usersRoutes = require("./routes/usersRoutes");
+const postsRoutes = require("./routes/postsRoutes");
+
+//importando as Rotas da image ("uplouds")
+app.use("/static" , express.static("uploads"));
 
 // Definindo os middlewares
 app.use(express.json());
 
 // Definindo as rotas
 app.use("/users", usersRoutes);
+app.use("/posts", postsRoutes);
 
 // Rotas da raiz "/"
 app.get("/", (request, response) => {    
@@ -29,11 +34,6 @@ app.delete("/", (request, response) => {
 });
 
 // Rotas de usuário "/users"
-
-
-
-
-
 
 
 
